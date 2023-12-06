@@ -1,0 +1,25 @@
+name: "Network Navigators Oddyssey: A Phoenix Rebirth"
+author: "j3x"
+category: web
+difficulty: medhard
+description: | 
+  > After the havoc we wreaked last time, the corporate rises again like a phoenix from the ashes, they've patched their weaknesses, bolstered their defenses. But rest assured, we know that nothing can incapacitate our cyber wizard.  
+  > The phoenix might have risen again, but will it stand your relentless slaughter ?  
+  > Author: j3x
+
+flags:
+  - shellmates{5laugh73r_7h3_Pho3niXx!___1njec7_1T_w1tH_@rgum3ntSs!!}
+
+image: phoenixrebirth
+
+deployment:
+  isolate: true
+  conn_type: http
+  containerPort: 5000
+
+topics:
+  - argument injection
+
+files:
+  - app/app.py
+
