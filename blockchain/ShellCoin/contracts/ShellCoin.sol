@@ -29,6 +29,17 @@ contract ShellCoin is ERC20 {
     }
 
 
+    function _checkExecutor() internal view {
+        require(willExecutor == msg.sender, "You're not the will executor you thief !");
+    }
+
+
+
+    modifier onlyExecutor() {
+        _checkExecutor();
+        _;
+    }
+
     function _checkTime() internal view {
         require(block.timestamp > grandpaPassingTime + 30 * 365 days, "It's not the right time yet grandson.");
     }
