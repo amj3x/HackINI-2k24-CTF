@@ -8,7 +8,7 @@ contract Setup {
    
     constructor() payable {
         // Set willExecutor to the player address
-        TARGET = new ShellCoin(_player);
+        TARGET = new ShellCoin();
     }
 
 
