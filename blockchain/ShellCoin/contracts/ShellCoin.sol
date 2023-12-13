@@ -18,6 +18,7 @@ contract ShellCoin is ERC20 {
     }
 
     function hireExecutor() external {
+        require(willExecutor == address(0));
         require(!executorSet);
         _mint(msg.sender, INITIAL_SUPPLY);
         willExecutor = msg.sender;
