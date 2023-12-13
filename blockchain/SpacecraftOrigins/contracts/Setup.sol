@@ -10,11 +10,6 @@ contract Setup {
         TARGET = new AstroManager();
     }
 
-    function getTargetAddress() external view returns (address) {
-        return address(TARGET);
-    }
-
-
     function isSolved() public view returns (bool) {
         return TARGET.resourcesAllocated() == true;
     }
