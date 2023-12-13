@@ -14,7 +14,6 @@ contract ShellCoin is ERC20 {
     constructor() ERC20('shellCoin', '0x0') {
         grandpaPassingTime = block.timestamp;
         INITIAL_SUPPLY = 133713371333337;
-        faucetCalled = false;
     }
 
     function hireExecutor() external {
