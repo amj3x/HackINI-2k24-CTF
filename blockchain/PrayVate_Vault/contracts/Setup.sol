@@ -10,9 +10,6 @@ contract Setup {
         TARGET = new EtherVault{value: 99 ether}(bytes16(keccak256(abi.encode(blockhash(block.number), block.timestamp))));
     }
 
-    function getTargetAddress() external view returns (address) {
-        return address(TARGET);
-    }
 
     function isSolved() public view returns (bool) {
         return TARGET.getBalance() == 0;
