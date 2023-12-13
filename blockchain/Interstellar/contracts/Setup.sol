@@ -8,11 +8,6 @@ contract Setup {
 
     constructor() payable {
         TARGET = new SpaceShip();
-        require(msg.value == 1 ether);
-    }
-
-    function getTargetAddress() external view returns (address) {
-        return address(TARGET);
     }
 
 

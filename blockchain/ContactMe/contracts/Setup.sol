@@ -1,22 +1,21 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {ContactMe} from "./ContactMe.sol";
 
 contract Setup {
-    ContactMe public immutable TARGET;
-   
+    bool public solved;
+
     constructor() payable {
-        TARGET = new ContactMe();
-        require(msg.value == 1 ether);
+        solved = false;
     }
 
-    function getTargetAddress() external view returns (address) {
-        return address(TARGET);
+    function makeACall(uint8 _hour) external {
+        require(_hour == 7,"I'm not availabe at this hour, call me at 7.");
+            solved = true;
     }
 
     function isSolved() public view returns (bool) {
-        return TARGET.solved() == true;
+        return solved == true;
     }
 
 }

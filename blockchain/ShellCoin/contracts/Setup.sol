@@ -9,11 +9,6 @@ contract Setup {
     constructor(address _player) payable {
         // Set willExecutor to the player address
         TARGET = new ShellCoin(_player);
-        require(msg.value == 1 ether);
-    }
-
-    function getTargetAddress() external view returns (address) {
-        return address(TARGET);
     }
 
 

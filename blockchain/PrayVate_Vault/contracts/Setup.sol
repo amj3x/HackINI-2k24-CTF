@@ -7,8 +7,7 @@ contract Setup {
     EtherVault public immutable TARGET;
    
     constructor() payable {
-        TARGET = new EtherVault{value: 100 ether}(bytes16(keccak256(abi.encode(blockhash(block.number), block.timestamp))));
-        require(msg.value == 120 ether);
+        TARGET = new EtherVault{value: 99 ether}(bytes16(keccak256(abi.encode(blockhash(block.number), block.timestamp))));
     }
 
     function getTargetAddress() external view returns (address) {

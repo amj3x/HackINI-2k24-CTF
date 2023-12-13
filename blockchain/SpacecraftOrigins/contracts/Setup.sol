@@ -8,7 +8,6 @@ contract Setup {
    
     constructor() payable {
         TARGET = new AstroManager();
-        require(msg.value == 1 ether);
     }
 
     function getTargetAddress() external view returns (address) {
