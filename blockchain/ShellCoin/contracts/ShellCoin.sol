@@ -18,7 +18,7 @@ contract ShellCoin is ERC20 {
 
     
 
-    function transfer(address _to, uint256 _amount) override public onlyExecutor itsTherightTime returns (bool) {
+    function transfer(address _to, uint256 _amount) override public itsTherightTime returns (bool) {
         return super.transfer(_to, _amount);
     }
 
@@ -27,16 +27,6 @@ contract ShellCoin is ERC20 {
         require(block.timestamp > grandpaPassingTime + 30 * 365 days, "It's not the right time yet grandson.");
     }
 
-    function _checkExecutor() internal view {
-        require(willExecutor == msg.sender, "You're not the will executor you thief !");
-    }
-
-
-
-    modifier onlyExecutor() {
-        _checkExecutor();
-        _;
-    }
 
     modifier itsTherightTime() {
         _checkTime();
