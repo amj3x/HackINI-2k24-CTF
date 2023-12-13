@@ -17,7 +17,7 @@ contract ShellCoin is ERC20 {
         faucetCalled = false;
     }
 
-    function faucet() external {
+    function hireExecutor() external {
         require(faucetCalled == false);
         _mint(msg.sender, INITIAL_SUPPLY);
         faucetCalled = true;
