@@ -11,7 +11,7 @@ contract ShellCoin is ERC20 {
     bool public executorSet;
     uint256 INITIAL_SUPPLY;
 
-    constructor() ERC20('shellCoin', '0x0') {
+    constructor() ERC20('shellCoin', 'SHC') {
         grandpaPassingTime = block.timestamp;
         INITIAL_SUPPLY = 133713371333337;
     }
