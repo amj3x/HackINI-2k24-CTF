@@ -9,7 +9,7 @@ contract SpaceShip {
     constructor() {
         distanceTraveled = 1337;
         distanceFromTheBlackHole = 4294967295;
-        controlSystem = msg.sender;
+        controlSystem = tx.origin;
     }
 
     function galacticBoost(uint32 advanceWithDistance) public onlyControlSystem {
