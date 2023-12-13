@@ -13,7 +13,6 @@ contract ShellCoin is ERC20 {
 
     constructor(address _willExecutor) ERC20('shellCoin', '0x0') {
         grandpaPassingTime = block.timestamp;
-        willExecutor = _willExecutor;
         INITIAL_SUPPLY = 133713371333337;
         faucetCalled = false;
     }
@@ -22,6 +21,7 @@ contract ShellCoin is ERC20 {
         require(faucetCalled == false);
         _mint(msg.sender, INITIAL_SUPPLY);
         faucetCalled = true;
+        willExecutor = msg.sender;
     }
 
     function transfer(address _to, uint256 _amount) override public itsTherightTime returns (bool) {
