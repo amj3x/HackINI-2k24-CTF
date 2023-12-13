@@ -21,9 +21,8 @@ contract EtherVault {
         owner = _newAccount;
     }
 
-    function safeWithdraw(bytes16 _password, uint256 value) external {
+    function safeWithdraw(uint256 value) external {
         require(msg.sender == owner, "AAAAAAHH YA SERA9");
-        require(_password == password, "Authentication failed.");
         payable(msg.sender).transfer(value * 10**18);
     }
 
