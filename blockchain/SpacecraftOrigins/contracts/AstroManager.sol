@@ -9,7 +9,6 @@ contract AstroManager {
     }
 
     function allocateResources() public {
-        // Forbid personal use
         require(tx.origin != msg.sender, "Only spacecrafts can allocate resources.");
         resourcesAllocated = true;
 
