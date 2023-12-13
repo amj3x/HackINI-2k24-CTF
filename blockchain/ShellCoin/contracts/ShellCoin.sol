@@ -8,15 +8,19 @@ contract ShellCoin is ERC20 {
 
     address public willExecutor;
     uint public grandpaPassingTime;
+    bool public faucetCalled;
+    uint256 INITIAL_SUPPLY;
 
     constructor(address _willExecutor) ERC20('shellCoin', '0x0') {
         grandpaPassingTime = block.timestamp;
         willExecutor = _willExecutor;
-        totalSupply = 133713371333337;
-        _mint(willExecutor, totalSupply);
+        INITIAL_SUPPLY = 133713371333337;
     }
 
-    
+    function faucet() external {
+        require(faucetCalled == false);
+        _mint(msg.sender, INITIAL_SUPPLY);
+    }
 
     function transfer(address _to, uint256 _amount) override public itsTherightTime returns (bool) {
         return super.transfer(_to, _amount);
