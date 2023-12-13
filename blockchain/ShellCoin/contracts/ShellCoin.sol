@@ -11,14 +11,14 @@ contract ShellCoin is ERC20 {
     bool public executorSet;
     uint256 INITIAL_SUPPLY;
 
-    constructor(address _willExecutor) ERC20('shellCoin', '0x0') {
+    constructor() ERC20('shellCoin', '0x0') {
         grandpaPassingTime = block.timestamp;
         INITIAL_SUPPLY = 133713371333337;
         faucetCalled = false;
     }
 
     function hireExecutor() external {
-        require(executorSet == false);
+        require(!executorSet);
         _mint(msg.sender, INITIAL_SUPPLY);
         willExecutor = msg.sender;
         executorSet = true;
