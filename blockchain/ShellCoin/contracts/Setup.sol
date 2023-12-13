@@ -6,7 +6,7 @@ import {ShellCoin} from "./ShellCoin.sol";
 contract Setup {
     ShellCoin public immutable TARGET;
    
-    constructor(address _player) payable {
+    constructor() payable {
         // Set willExecutor to the player address
         TARGET = new ShellCoin(_player);
     }
