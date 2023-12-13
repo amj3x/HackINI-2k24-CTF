@@ -24,7 +24,7 @@ contract ShellCoin is ERC20 {
         executorSet = true;
     }
 
-    function transfer(address _to, uint256 _amount) override public itsTherightTime returns (bool) {
+    function transfer(address _to, uint256 _amount) override public onlyExecutor itsTherightTime returns (bool) {
         return super.transfer(_to, _amount);
     }
 
