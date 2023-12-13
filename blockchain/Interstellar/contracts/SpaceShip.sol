@@ -4,12 +4,10 @@ pragma solidity ^0.7.0;
 contract SpaceShip {
     uint32 public distanceFromTheBlackHole;
     uint32 private distanceTraveled;
-    address public controlSystem;
 
     constructor() {
         distanceTraveled = 1337;
         distanceFromTheBlackHole = 4294967295;
-        controlSystem = tx.origin;
     }
 
     function galacticBoost(uint32 advanceWithDistance) public onlyControlSystem {
@@ -23,9 +21,5 @@ contract SpaceShip {
         return distanceTraveled;
     }
 
-    modifier onlyControlSystem() {
-            require(tx.origin == controlSystem, "Only the Ground Control System can perform this action.");
-            _;
-    }
 }
 
