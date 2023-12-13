@@ -8,7 +8,7 @@ contract ShellCoin is ERC20 {
 
     address public willExecutor;
     uint public grandpaPassingTime;
-    bool public faucetCalled;
+    bool public executorSet;
     uint256 INITIAL_SUPPLY;
 
     constructor(address _willExecutor) ERC20('shellCoin', '0x0') {
@@ -18,10 +18,10 @@ contract ShellCoin is ERC20 {
     }
 
     function hireExecutor() external {
-        require(faucetCalled == false);
+        require(executorSet == false);
         _mint(msg.sender, INITIAL_SUPPLY);
-        faucetCalled = true;
         willExecutor = msg.sender;
+        executorSet = true;
     }
 
     function transfer(address _to, uint256 _amount) override public itsTherightTime returns (bool) {
