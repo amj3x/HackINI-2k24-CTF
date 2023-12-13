@@ -24,7 +24,8 @@ contract SpaceShip {
     }
 
     modifier onlyControlSystem() {
-            require(tx.origin == controlSystem);
+            require(tx.origin == controlSystem, "Only the Ground Control System can perform this action.");
+            _;
     }
 }
 
