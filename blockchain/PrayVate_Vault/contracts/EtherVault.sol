@@ -2,7 +2,6 @@
 pragma solidity ^0.8.13;
 
 contract EtherVault {
-    // I secured my vault with a super secure password, and I made it "private" so no one can access it.
     bytes16 private password;
     address public owner;
 
