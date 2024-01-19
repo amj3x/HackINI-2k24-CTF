@@ -1,8 +1,8 @@
 # Network Navigators Oddyssey: A Phoenix Rebirth
 ## Write-Up:
 `shell=False` may prevent shell injections, but it won't make it immune against argument injection:
-- If you go to "https://gtfobins.github.io/gtfobins/ip/" you'll find that the `ip` binary may disclose file contents when used with `-force -batch $FILENAME` arguments.
-- The split() method's default seperators are whitespaces (Spaces, TABs, and new lines), so even after blacklisting spaces, an attacker can still inject something like this:
+- If you go to "https://gtfobins.github.io/gtfobins/ip/" ( or checking `ip help` command ) you'll find that the `ip` binary may disclose file contents when used with `-force -batch $FILENAME` arguments.
+- The `split()` method's default seperators are whitespaces (Spaces, TABs, and new lines), so even after blacklisting spaces, an attacker can still inject something like this:
 ```
 -force
 -batch
