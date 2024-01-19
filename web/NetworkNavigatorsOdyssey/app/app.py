@@ -14,7 +14,7 @@ def index():
 def ip():
     option = request.form['option']
     if any(character in option for character in blacklist):
-        return "Nice Try"
+        return "Malicious input detected."
 
     if not any(opt in option for opt in whitelist):
         return f"Sorry, but only these options are availabe: {whitelist}"

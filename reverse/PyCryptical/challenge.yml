@@ -1,0 +1,26 @@
+name: "PyCryptical"
+author: "j3x"
+author_link: "https://github.com/0x0000000000000j3x/"
+category: reverse
+difficulty: medium
+description: |
+  > The enigmatic wizards of Shellmates have devised a perplexing puzzle to test your mettle. Deep within the realm of ancient Python 2 incantations, a hidden message lies encrypted, shielded by a veil of cryptic charm.  
+
+
+flags:
+  - shellmates{Cr4ck3D_PyC_As_4_5harP_p1k3}
+
+image: pycryptical
+
+deployment:
+  isolate: false
+  conn_type: nc
+  containerPort: 1337
+
+topics:
+  - PyC
+  - ez crypto
+
+files:
+  - ./chall.pyc
+
